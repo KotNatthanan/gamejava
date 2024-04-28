@@ -32,12 +32,12 @@ public class Dog {
 
 	public void jump(Canvas canvas) {
 		this.y -= speed;
-		draw(canvas.getGraphicsContext2D(), 60); // ส่งขนาดเข้าไปในเมธอด draw
+		draw(canvas.getGraphicsContext2D(), 70); // ส่งขนาดเข้าไปในเมธอด draw
 		// Fall
 		Timeline timeline = new Timeline(
 				new KeyFrame(Duration.millis(450), event -> {
 					y += speed;
-					draw(canvas.getGraphicsContext2D(), 60); // ส่งขนาดเข้าไปในเมธอด draw
+					draw(canvas.getGraphicsContext2D(), 70); // ส่งขนาดเข้าไปในเมธอด draw
 				})
 		);
 		timeline.play();
@@ -74,7 +74,7 @@ public class Dog {
 	}
 
 	private void draw(GraphicsContext gc, double size) {
-		gc.clearRect(1, 1, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+		gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 		gc.drawImage(image, x, y, size, size); // ใช้ขนาดที่ส่งเข้ามาในการวาดรูปภาพ
 	}
 
